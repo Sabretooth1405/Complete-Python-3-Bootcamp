@@ -1,6 +1,5 @@
 
 
-
 rows, cols = (9, 9)
 board = [["#"]*3 for _ in range(3)]
 move = 0
@@ -112,7 +111,7 @@ def print_winner():
     print(s)
 
 
-k = []
+k = [0, 0]
 while(move < 9):
     if move % 2 == 0:
         i1 = input("Move P1: ")
@@ -124,14 +123,14 @@ while(move < 9):
         cb(i2)
     disp_board()
     m = check_winner()
-    print(m)
+    move += 1
     if m[0] == 1:
         k = m
         break
     elif move == 9:
         print("Game Tied!!!")
         break
-    move += 1
+   
     # print(move)
 if k[0] == 1:
     print_winner()
